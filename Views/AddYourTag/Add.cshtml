@@ -1,0 +1,32 @@
+﻿@model BiteBlogs.Models.NewFolder.AddTagRequest
+
+@{
+    ViewData["Title"] = "Add Tag";
+}
+
+<h1>Add a New Tag</h1>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
+
+<div class="container py-5">
+    <form asp-action="Add" method="post">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DisplayName" class="form-label"></label>
+            <input asp-for="DisplayName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
+    </form>
+</div>

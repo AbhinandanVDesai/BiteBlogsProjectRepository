@@ -1,0 +1,105 @@
+﻿@model List<BiteBlogs.Models.Tag>
+
+@{
+    ViewData["Title"] = "Added Tags";
+    var nextPage = Convert.ToInt32(ViewBag.pageNumber) + 1;
+    var previousPage = Convert.ToInt32(ViewBag.pageNumber) - 1;
+}
+
+
+<form method="get"
+  asp-controller="AddYourTag",
+  asp-action="List"
+  
+>
+<div class="container mt-5">
+    <div class="col col-md-3 d-flex"> 
+        <input type="text" class="form-control" name="searchQuery" 
+                                                value="@ViewBag.searchQuery"                    />
+        <button type="submit" class="btn btn-warning ms-3">Search</button>
+    </div>
+
+</div>
+</form>
+<h1>The Added Tags</h1>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name
+                    <span>
+                        <span>
+                            @* in this span i have added up arrow and down arrow for sorting *@
+                            <a
+                             asp-controller="AddYourTag"
+                             asp-action="List"                   
+                             asp-route-sortBy="Name"
+                             asp-route-sortDirection="Asc"
+                             asp-route-searchQuery="@ViewBag.searchQuery"
+                             > 
+                              <i class="bi bi-arrow-up"></i>
+                            </a>
+                        </span>
+
+                        <span>
+                            <a asp-controller="AddYourTag"
+                               asp-action="List"
+                               asp-route-sortBy="Name"
+                               asp-route-sortDirection="Desc"
+                               asp-route-searchQuery="@ViewBag.searchQuery"
+                            >
+                              
+                                <i class="bi bi-arrow-down"></i>
+                            </a>
+                        </span>
+                    </span>
+                </th>
+                <th>Display Name</th>
+                <th>action </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tag in Model) // Iterate over each tag in the list
+            {
+                <tr>
+                    <td>@tag.Id</td> <!-- Access properties of each tag -->
+                    <td>@tag.Name</td>
+                    <td>@tag.DisplayName</td>
+                     <td>
+                            <a asp-area="" asp-controller="AddYourTag" asp-action="Edit" asp-route-id="@tag.Id">Edit</a>
+                        </td>                </tr>
+            }
+        </tbody>
+    </table>
+
+    <nav aria-label="Page navigation example">          @* this pagination html i took it from bootstrap *@
+        <ul class="pagination">                            @* then modified according to my needs *@
+            <li class="page-item"><a class="page-link" 
+                  asp-controller="AddYourTag"
+                  asp-action="List"
+                  asp-route-pageNumber="@previousPage"
+                  asp-route-sortBy="@ViewBag.sortBy"
+                  asp-route-sortDirection="@ViewBag.sortDirection"
+            >Previous</a></li>
+            
+            
+            @for (int i = 1; i <= ViewBag.totalPages; i++)
+            {
+                <li class="page-item"><a class="page-link"  
+                   asp-controller="AddYourTag" asp-action="List" asp-route-pageNumber="@i" asp-route-sortBy="@ViewBag.sortBy"
+                   asp-route-sortDirection="@ViewBag.sortDirection"
+                >@i</a></li>
+            }
+            
+            
+            <li class="page-item"><a class="page-link" 
+                    asp-controller="AddYourTag"
+                    asp-action="List"
+                    asp-route-pageNumber="@nextPage"
+                    
+            >Next</a></li>
+        </ul>
+    </nav>
+</div>

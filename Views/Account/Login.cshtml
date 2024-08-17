@@ -1,0 +1,30 @@
+﻿@model BiteBlogs.Models.NewFolder.LoginRequest
+
+@{
+}
+
+<div class="container mx-auto">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
+            <h1 class="mb-3 mt-3 h3">Log-In</h1>
+
+            <form method="post">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="mb-3">
+                    <label for="username" class="form-label mb-1">Username</label>
+                    <input type="text" class="form-control" id="username" asp-for="UserName" />
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label mb-1">Password</label>
+                    <input type="password" class="form-control" id="password" asp-for="Password" />
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">Log-in</button>
+            </form>
+        </div>
+    </div>
+</div>

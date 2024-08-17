@@ -1,0 +1,51 @@
+﻿@model BiteBlogs.Models.NewFolder.RegisterRequest;
+
+@{
+}
+
+ <div class="container mx-auto">
+     <div class="row justify-content-center mx-auto">
+         <div class="col-12 col-lg-6">
+             
+             <h1 class="mb-3 mt-3 h3">Register</h1>
+
+             <form  method="post">
+
+                 <div asp-validation-summary="All">
+
+                 </div>
+
+                <div class="mb3">
+                    <label class="form-label">UserName</label>
+                    <input type="text" class="form-control" id="username" asp-for="UserName"   required/>
+                     <span asp-validation-for="UserName"></span>
+                </div>
+
+                <div class="mb3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" asp-for="Email" required/>
+                    <span asp-validation-for="Email"></span>
+                </div>
+
+                <div class="mb3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" asp-for="Password" />
+                    <span asp-validation-for="Password"></span>
+                </div>
+
+                <div class="mb3">
+                    <button type="submit" class="btn btn-dark">Register</button>
+                </div>
+
+
+             
+             </form>
+             
+            
+
+
+         </div>
+
+     </div>
+
+ </div>

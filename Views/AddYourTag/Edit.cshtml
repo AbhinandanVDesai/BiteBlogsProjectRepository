@@ -1,0 +1,25 @@
+﻿@model BiteBlogs.Models.NewFolder.EditTagRequest
+
+<h1>Edit Tag</h1>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+}
+
+<form asp-action="Edit" method="post">
+    <div>
+        <label class="form-label">Id</label>
+        <input type="hidden" asp-for="Id" class="form-control" />
+    </div>
+    <div>
+        <label class="form-label">Name</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div>
+        <label class="form-label">Display Name</label>
+        <input type="text" asp-for="DisplayName" class="form-control" />
+    </div>
+    <button type="submit " class="btn btn-primary btn-lg">Update</button>
+    <button  type="submit" class="btn btn-danger btn-lg " style="display:inline" asp-area="" asp-controller="AddYourTag" asp-action="Delete" >Delete</button>
+</form>

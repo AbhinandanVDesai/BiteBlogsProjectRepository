@@ -1,0 +1,108 @@
+﻿@model List<BiteBlogs.Models.BlogPost>
+
+@{
+    ViewData["Title"] = "All Blogs";
+}
+
+<form method="get"
+      asp-controller="AddBlog" ,
+      asp-action="GetAllBlogs">
+    <div class="container mt-5">
+        <div class="col col-md-3 d-flex">
+            <input type="text" class="form-control" name="searchQuery"
+                   value="@ViewBag.searchQuery" />
+            <button type="submit" class="btn btn-warning ms-3">Search</button>
+        </div>
+
+    </div>
+</form>
+
+
+<h2>All Blogs</h2>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+               <span>
+                    <span>
+                        @* in this span i have added up arrow and down arrow for sorting *@
+                        <a asp-controller="AddBlog"
+                           asp-action="GetAllBlogs"
+                           asp-route-sortBy="Heading"
+                           asp-route-sortDirection="Asc"
+                           asp-route-searchQuery="@ViewBag.searchQuery">   @* this searchQuery is usefull for sort with filter *@ 
+                            <i class="bi bi-arrow-up-circle-fill"></i>
+                        </a>
+                    </span>
+                    <span>
+                        @* in this span i have added down arrow and down arrow for sorting *@
+                        <a asp-controller="AddBlog"
+                           asp-action="GetAllBlogs"
+                           asp-route-sortBy="Heading"
+                           asp-route-sortDirection="desc"
+                           asp-route-searchQuery="@ViewBag.searchQuery">
+                            <i class="bi bi-arrow-down-circle-fill"></i>
+                        </a>
+                    </span>
+               </span> 
+                Heading</th>
+            <th>
+               <span>
+                   <span>
+                       <a asp-controller="AddBlog"
+                          asp-action="GetAllBlogs"
+                          asp-route-sortBy="Title"
+                          asp-route-sortDirection="asc"
+                          asp-route-searchQuery="@ViewBag.searchQuery"
+
+                       >
+                            <i class="bi bi-arrow-up-circle-fill"></i>
+                       
+                   </a>
+                   </span>
+                    <span>
+                        <a  asp-controller="AddBlog"
+                            asp-action="GetAllBlogs"
+                            asp-route-sortBy="Title"
+                            asp-route-sortDirection="desc"  
+                            asp-route-searchQuery="@ViewBag.searchQuery"
+                            >
+                            <i class="bi bi-arrow-down-circle-fill"></i>
+                        </a>
+                    </span>
+               </span> Page Title</th>
+            <th>Short Description</th>
+            <th>Author</th>
+            <th>Published Date</th>
+            <th>Tags</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var blog in Model)
+        {
+            <tr>
+                <td>@blog.Heading</td> 
+                <td>@blog.PageTitle</td>
+                <td>@blog.ShortDescription</td>
+                <td>@blog.Author</td>
+                <td>@blog.PublishedDate.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <div class="d-flex flex-wrap">
+                        @foreach (var tag in blog.Tags)
+                        {
+                            <span class="badge bg-secondary m-1">@tag.Name</span>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <a asp-controller="AddBlog" asp-action="Details" asp-route-id="@blog.Id" class="btn btn-info">Details</a>
+                    <a asp-controller="AddBlog" asp-action="EditBlog" asp-route-id="@blog.Id" class="btn btn-warning">Edit</a>
+                    <a asp-controller="AddBlog" asp-action="DeleteBlog" asp-route-id="@blog.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,81 @@
+﻿@model BiteBlogs.Models.NewFolder.EditBlogRequest;
+
+@{
+    ViewData["Title"] = "Edit Blog";
+}
+
+<h2>EditR Blog</h2>
+
+<form  method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Heading" class="control-label"></label>
+        <input asp-for="Heading" class="form-control" />
+        <span asp-validation-for="Heading" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PageTitle" class="control-label"></label>
+        <input asp-for="PageTitle" class="form-control" />
+        <span asp-validation-for="PageTitle" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Content" class="control-label"></label>
+        <textarea asp-for="Content" class="form-control" id="content"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ShortDescription" class="control-label"></label>
+        <textarea asp-for="ShortDescription" class="form-control"></textarea>
+        <span asp-validation-for="ShortDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Author" class="control-label"></label>
+        <input asp-for="Author" class="form-control" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UrlHandle" class="control-label"></label>
+        <input asp-for="UrlHandle" class="form-control" />
+        <span asp-validation-for="UrlHandle" class="text-danger"></span>
+    </div>
+
+    <div>
+       <label for="FeaturedImageUpload" class="form-label">Featured image upload</label>
+       <input type="file" id="FeaturedImageUpload" class="form-control" />
+ 
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FeaturedUrl" class="control-label"></label>
+        <input asp-for="FeaturedUrl" class="form-control" />
+        <span asp-validation-for="FeaturedUrl" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PublishedDate" class="control-label"></label>
+        <input asp-for="PublishedDate" class="form-control" type="datetime-local" />
+        <span asp-validation-for="PublishedDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Tags" class="control-label"></label>
+        <select asp-for="SelectedTags" asp-items="Model.Tags" class="form-control" multiple="multiple"></select>
+        <span asp-validation-for="SelectedTags" class="text-danger"></span>
+    </div>
+    <button type="submit" class=" btn btn-primary " asp-controller="AddBlog" asp-action="EditBlog">update</button>
+    <button type="submit" class=" btn btn-danger " asp-controller="AddBlog" asp-action="DeleteBlog">Delete</button>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        var editor = new FroalaEditor("#content"); 
+    </script>
+}

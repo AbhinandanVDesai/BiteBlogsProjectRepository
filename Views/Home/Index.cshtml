@@ -1,0 +1,112 @@
+﻿@model BiteBlogs.Models.BlogsTagsHomeView
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="~/css/home.css" />
+
+
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info">@TempData["Message"]</div>
+}
+
+
+
+
+<div class="container-fluid px-0">
+    <!-- Hero Section -->
+    <div   class="container col-xxl-8 px-4 py-5 text-white">
+        <div class="row align-items-center g-5 py-5">
+            <div class="col-12 col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">
+                    BiteBlogs - Find the perfect recipe
+                </h1>
+                <p class="lead">
+                    BiteBlog is a place where you can find
+                    a variety of recipes from all parts of India.
+                    You will get step-by-step explanations of each recipe.
+                    Join BiteBlogs to get regular updates.
+                </p>
+                <a href="#recipes" class="btn btn-lg btn-light">Discover Recipes</a>
+            </div>
+            <div class="col-12 col-lg-6">
+                <img width="100%" src="@Url.Content("~/images/dish.jpg")" alt="My Image" class="img-fluid rounded shadow-lg" />
+            </div>
+        </div>
+    </div>
+
+    <form 
+        asp-controller="home",
+        asp-action="index"
+        
+        method="get">
+          <div class="container mt-5">
+                <div class="d-flex">
+                    <input type="text" name="searchQuery" value="" />
+                </div>
+                <button type="submit" class="btn btn-secondary">Search</button>
+          </div>
+        
+    
+    </form>
+
+    <!-- Tags Section -->
+    <div class="container my-5">
+        <div class="bg-light p-4 rounded shadow-sm">
+            <h3 class="text-secondary">Tags</h3>
+            @if (Model.tags != null && Model.tags.Any())
+            {
+                <div class="d-flex flex-wrap">
+                    @foreach (var tag in Model.tags)
+                    {
+                        <span class="badge bg-dark me-2 mb-2">@tag.DisplayName</span>
+                    }
+                </div>
+            }
+            else
+            {
+                <p>No tags available.</p>
+            }
+        </div>
+    </div>
+
+    <!-- Blog Posts Section -->
+    <div id="recipes" class="container my-5">
+        <h3 class="text-secondary mb-4">Latest Recipes</h3>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            @if (Model != null && Model.blogPosts.Any())
+            {
+                @foreach (var blogPost in Model.blogPosts)
+                {
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="@blogPost.FeaturedUrl" class="card-img-top" alt="@blogPost.Heading">
+                            <div class="card-body">
+                                <h5 class="card-title">@blogPost.Heading</h5>
+                                <p class="card-text">
+                                    <strong>Author:</strong> @blogPost.Author<br />
+                                    <strong>Published Date:</strong> @blogPost.PublishedDate.ToShortDateString()
+                                </p>
+                                <div class="mb-3">
+                                    @foreach (var tag in blogPost.Tags)
+                                    {
+                                        <span class="badge bg-secondary me-1">@tag.Name</span>
+                                    }
+                                </div>
+                                <p class="card-text">@blogPost.ShortDescription</p>
+                                <a href="@Url.Action("getByUrlHandle", "Blogs", new { urlHandle = blogPost.UrlHandle })" class="btn btn-dark">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-center">No blog posts available.</p>
+            }
+        </div>
+    </div>
+</div>

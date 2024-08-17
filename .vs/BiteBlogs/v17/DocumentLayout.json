@@ -1,0 +1,185 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|c:\\users\\abc\\source\\repos\\biteblogs\\models\\biteblogdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|solutionrelative:models\\biteblogdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|c:\\users\\abc\\source\\repos\\biteblogs\\models\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|solutionrelative:models\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|c:\\users\\abc\\source\\repos\\biteblogs\\models\\blogpostcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|solutionrelative:models\\blogpostcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|c:\\users\\abc\\source\\repos\\biteblogs\\models\\blogpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|solutionrelative:models\\blogpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|c:\\users\\abc\\source\\repos\\biteblogs\\migrations\\20240624021420_add comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|solutionrelative:migrations\\20240624021420_add comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|c:\\users\\abc\\source\\repos\\biteblogs\\models\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|solutionrelative:models\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|c:\\users\\abc\\source\\repos\\biteblogs\\controllers\\addblogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|solutionrelative:controllers\\addblogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|c:\\users\\abc\\source\\repos\\biteblogs\\controllers\\adminuserscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|solutionrelative:controllers\\adminuserscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|c:\\users\\abc\\source\\repos\\biteblogs\\controllers\\apitestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|solutionrelative:controllers\\apitestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|c:\\users\\abc\\source\\repos\\biteblogs\\controllers\\imagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1219AE21-FBA4-4FD7-BCF9-274A4D72346C}|BiteBlogs.csproj|solutionrelative:controllers\\imagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tag.cs",
+              "DocumentMoniker": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Models\\Tag.cs",
+              "RelativeDocumentMoniker": "Models\\Tag.cs",
+              "ToolTip": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Models\\Tag.cs",
+              "RelativeToolTip": "Models\\Tag.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T07:48:24.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BlogPostComment.cs",
+              "DocumentMoniker": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Models\\BlogPostComment.cs",
+              "RelativeDocumentMoniker": "Models\\BlogPostComment.cs",
+              "ToolTip": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Models\\BlogPostComment.cs",
+              "RelativeToolTip": "Models\\BlogPostComment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T07:48:01.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BlogPost.cs",
+              "DocumentMoniker": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Models\\BlogPost.cs",
+              "RelativeDocumentMoniker": "Models\\BlogPost.cs",
+              "ToolTip": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Models\\BlogPost.cs",
+              "RelativeToolTip": "Models\\BlogPost.cs",
+              "ViewState": "AQIAAAgAAACQmZmZmTkxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T07:27:27.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20240624021420_Add Comment.cs",
+              "DocumentMoniker": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Migrations\\20240624021420_Add Comment.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240624021420_Add Comment.cs",
+              "ToolTip": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Migrations\\20240624021420_Add Comment.cs",
+              "RelativeToolTip": "Migrations\\20240624021420_Add Comment.cs",
+              "ViewState": "AQIAAAIAAACAMzMzM/MmwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T07:24:12.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BiteBlogDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Models\\BiteBlogDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\BiteBlogDbContext.cs",
+              "ToolTip": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Models\\BiteBlogDbContext.cs",
+              "RelativeToolTip": "Models\\BiteBlogDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T04:14:25.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Models\\AuthDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\AuthDbContext.cs",
+              "ToolTip": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Models\\AuthDbContext.cs",
+              "RelativeToolTip": "Models\\AuthDbContext.cs",
+              "ViewState": "AQIAAEwAAAAAnDMzMzP1v1wAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T14:51:29.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddBlogController.cs",
+              "DocumentMoniker": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Controllers\\AddBlogController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AddBlogController.cs",
+              "ToolTip": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Controllers\\AddBlogController.cs",
+              "RelativeToolTip": "Controllers\\AddBlogController.cs",
+              "ViewState": "AQIAAAwAAAAAAQAAAIAZwB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T14:47:42.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminUsersController.cs",
+              "DocumentMoniker": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Controllers\\AdminUsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminUsersController.cs",
+              "ToolTip": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Controllers\\AdminUsersController.cs",
+              "RelativeToolTip": "Controllers\\AdminUsersController.cs",
+              "ViewState": "AQIAAAkAAADAAAAAAAAhwC8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T15:51:37.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "apiTestController.cs",
+              "DocumentMoniker": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Controllers\\apiTestController.cs",
+              "RelativeDocumentMoniker": "Controllers\\apiTestController.cs",
+              "ToolTip": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Controllers\\apiTestController.cs",
+              "RelativeToolTip": "Controllers\\apiTestController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T15:33:40.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ImagesController.cs",
+              "DocumentMoniker": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Controllers\\ImagesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ImagesController.cs",
+              "ToolTip": "C:\\Users\\abc\\source\\repos\\BiteBlogs\\Controllers\\ImagesController.cs",
+              "RelativeToolTip": "Controllers\\ImagesController.cs",
+              "ViewState": "AQIAAA4AAABAZ2ZmZmYowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T15:31:16.727Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

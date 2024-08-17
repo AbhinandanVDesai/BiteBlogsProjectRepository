@@ -1,0 +1,107 @@
+﻿@model  BiteBlogs.Models.NewFolder.UserListViewModel;
+
+@{
+}
+ <h2>Users List</h2>
+
+ <div>
+
+     <div class=" justify-content-end">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForCreateUser">
+            create user
+        </button>
+     </di>
+
+
+     @if(Model.UserList != null)
+     {
+       <table class="table">
+         <thead>
+             
+             <tr>
+                <th>UserId</th>
+                <th>UserName</th>
+                <th>Email</th>
+                <th> </th>
+             </tr>
+         </thead>
+
+         <tbody>
+             @foreach(var user in Model.UserList)
+             {
+                 <tr>
+                     <td>@user.Id</td>
+                     <td>@user.UserName</td>
+                     <td>@user.UserEmail</td>
+                     <td>
+                          <form 
+                           asp-controller="AdminUsers"
+                           asp-action="Delete"
+                           asp-route-id="@user.Id"
+
+                        method="post">
+                         <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                     </td>
+                 </tr>
+
+             }
+                 
+         </tbody>
+       </table>
+     }
+     else
+     {
+         <p>No User is Found</p>
+
+     }
+ </div>
+
+
+<!-- Modal -->
+<form method="post">
+<div class="modal fade" id="ModalForCreateUser" tabindex="-1" aria-labelledby="ModalLabe" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create User</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <lable class="form-label">UserName</lable>
+                  <input type="text" class="form-control" asp-for="UserName"/>
+                  
+                </div>
+
+                 <div class="mb-3">
+                    <lable class="form-label">Email</lable>
+                     <input type="text" class="form-control " asp-for="Email"/>
+                     
+                 </div>
+
+                 <div class="mb-3">
+                    <lable class="form-label">PassWord</lable>
+                     <input type="password" class="form-control"  asp-for="Password"/>
+                     
+                 </div>
+
+                 <div  class="form-check  mb-3">
+                     <input type="checkbox"  id="User" class="form-check-input" value="User" checked disable/>
+                     <label class="form-check-label" for="User">User</label>
+                 </div>
+
+                 <div class="form-check">
+                      <input type="checkbox"  class="form-check-input" id="Admin"  asp-for="AdminRoleCheckBox"/>
+                      <label class="form-check" for="Admin">Admin</label>
+                 </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" asp-controller="AdminUsers" asp-action="UserList">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>

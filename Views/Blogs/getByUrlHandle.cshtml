@@ -1,0 +1,128 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
+@model BiteBlogs.Models.NewFolder.BlogWithLikesForViewModel;
+@inject UserManager<IdentityUser> userManager;
+@inject SignInManager<IdentityUser> signInManager;
+
+@{
+    ViewData["Title"] = "Blog Post";
+}
+
+<link rel="stylesheet" href="~/css/blogDetails.css" />
+
+
+<h1>@Model.Author</h1>
+
+<div>
+    @if (signInManager.IsSignedIn(User))
+    {
+        if (Model.LikeStatus == true)
+        {
+            <a id="likebtn" style="cursor:pointer"> <i class="bi bi-hand-thumbs-up-fill"></i> </a>
+        }
+        else
+        {
+            <a id="likebtn" style="cursor:pointer"> <i class="bi bi-hand-thumbs-up"></i> </a>
+        }
+    }
+
+    <span id="likeCount">@Model.Likes</span> likes
+    @userManager.GetUserId(User)/
+    @Model.Id
+</div>
+
+<h1>@Html.Raw(Model.Content)</h1>
+
+<div>
+    <form asp-action="AddComment" method="post">
+        <div class="mb-3">
+            <label class="form-label">Comment here</label>
+            <input type="text" class="form-control" asp-for="Comment" />
+        </div>
+
+        <div class="mb-3">
+            <button type="submit">Post</button>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="UrlHandle" />
+            @Html.AntiForgeryToken()
+        </div>
+    </form>
+</div>
+
+<div class="card-body">
+    @if(Model.AllCommentsForThisBlog !=null && Model.AllCommentsForThisBlog.Any())
+    { 
+        @foreach(var comment in Model.AllCommentsForThisBlog)
+        {
+          <div class="card mb-3">
+             <div class="card-body">
+                 <div>
+                     @comment.CommentDescription
+                  </div>
+
+                  <div class=" d-flex justify-content-between">
+                      <span>@comment.UserName </span>
+                      <span>@comment.CommentPostDate</span>
+                  </div>
+
+             </div>
+
+          </div>   
+        }
+        
+
+        
+    }
+</div>
+
+
+
+@section Scripts {
+    <script>
+        let likeBtnElement = document.getElementById("likebtn");
+        let likeCountElement = document.getElementById("likeCount");
+
+
+
+          // this is a function to update the like count when user click on thumbs up
+       //this function we gonna add in  .then() of  addLikeFunction()
+        // Function to update the like count
+        async function getTotalLikes() {
+            fetch('/api/AddLikeToBlog/@Model.Id/totalLikes', {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "*/*"
+                }
+            }).then(data => data.json())
+                .then(result => likeCountElement.innerHTML = result);
+        }
+
+
+
+
+        //this is a function which on clicking like icon it will fetch api request and post data with that api
+        //we have made this api action method in addLikeToBlog controller (for testing perpose i have also created same action method in apiTestController)
+        // Function to handle like button click
+        function addLikeFunction() {
+            fetch("/api/apiTest/Add", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "*/*"
+                },
+                body: JSON.stringify({
+                    blogPostId: "@Model.Id",
+                    userId: "@userManager.GetUserId(User)"
+                })
+            }).then(() => {
+                likeBtnElement.innerHTML = '<i class="bi bi-hand-thumbs-up-fill"></i>';
+                likeBtnElement.removeEventListener("click", addLikeFunction);
+                getTotalLikes();
+            });
+        }
+
+        likeBtnElement.addEventListener("click", addLikeFunction);
+    </script>
+}
